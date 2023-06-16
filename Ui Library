@@ -85,7 +85,7 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(1/#library.tabbuttons,0,2,0)
+        v.Size = UDim2.new(1/#library.tabbuttons,0,3,0)
     end
 
     local tab = {}
@@ -209,8 +209,8 @@ function library:addTab(name)
             slider.Size = UDim2.new(1,0,0,36)
 
             slider_2.Parent = slider
-            slider_2.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            slider_2.BorderColor3 = Color3.fromRGB(50,50,50)
+            slider_2.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            slider_2.BorderColor3 = Color3.fromRGB(48, 34, 70)
             slider_2.Position = UDim2.new(0,0,0,18)
             slider_2.Size = UDim2.new(1,-10,0,18)
             slider_2.AutoButtonColor = false
@@ -225,9 +225,9 @@ function library:addTab(name)
             text.BorderSizePixel = 0
             text.Position = UDim2.new(0,0,-1,0)
             text.Size = UDim2.new(1,0,1,0)
-            text.Font = Enum.Font.SourceSans
+            text.Font = Enum.Font.Arial
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(255,255,255)
+            text.TextColor3 = Color3.fromRGB(239, 216, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
             text.TextYAlignment = "Top"
@@ -244,7 +244,7 @@ function library:addTab(name)
             valueText.Size = UDim2.new(1,0,1,0)
             valueText.Font = Enum.Font.SourceSans
             valueText.Text = "0"
-            valueText.TextColor3 = Color3.fromRGB(150,150,150)
+            valueText.TextColor3 = Color3.fromRGB(239, 216, 255)
             valueText.TextSize = 16
 
             local entered = false
@@ -307,7 +307,7 @@ function library:addTab(name)
             local divider = Instance.new("Frame")
 
             divider.Parent = grouper
-            divider.BackgroundColor3 = Color3.fromRGB(25,25,25)
+            divider.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
             divider.Size = UDim2.new(1,-10,0,1)
             divider.BorderSizePixel = 0
             divider.Name = "dontchange"
@@ -322,15 +322,15 @@ function library:addTab(name)
             end)
 
             textbox.Parent = grouper
-            textbox.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            textbox.BorderColor3 = Color3.fromRGB(50,50,50)
+            textbox.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            textbox.BorderColor3 = Color3.fromRGB(48, 34, 70)
             textbox.Size = UDim2.new(1,-10,0,18)
             textbox.ClearTextOnFocus = false
-            textbox.Font = Enum.Font.SourceSans
-            textbox.PlaceholderColor3 = Color3.fromRGB(130,130,130)
+            textbox.Font = Enum.Font.Arial
+            textbox.PlaceholderColor3 = Color3.fromRGB(61, 45, 85)
             textbox.PlaceholderText = args.text or ""
             textbox.Text = ""
-            textbox.TextColor3 = Color3.fromRGB(255,255,255)
+            textbox.TextColor3 = Color3.fromRGB(239, 216, 255)
             textbox.TextSize = 16
 
             library.flags[args.flag] = ""
