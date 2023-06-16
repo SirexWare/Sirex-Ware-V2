@@ -85,7 +85,7 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(1/#library.tabbuttons,0,1.5,0)
+        v.Size = UDim2.new(1/#library.tabbuttons,0,2,0)
     end
 
     local tab = {}
@@ -98,7 +98,7 @@ function library:addTab(name)
         local layout = Instance.new("UIListLayout")
         groupCount -= 1
         groupbox.Parent = newTab[pos == 0 and "left" or "right"]
-        groupbox.BackgroundColor3 = Color3.fromRGB(35,35,35)
+        groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
         groupbox.Size = UDim2.new(1,-5,0,10)
         groupbox.ZIndex = groupCount
@@ -126,7 +126,7 @@ function library:addTab(name)
             jigCount -= 1
 
             checkbox.Parent = grouper
-            checkbox.BackgroundColor3 = Color3.fromRGB(255,255,255)
+            checkbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
             checkbox.BackgroundTransparency = 1
             checkbox.Size = UDim2.new(1,0,0,18)
             checkbox.Text = ""
@@ -135,8 +135,8 @@ function library:addTab(name)
             checkbox.ZIndex = jigCount
 
             box.Parent = checkbox
-            box.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            box.BorderColor3 = Color3.fromRGB(50,50,50)
+            box.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            box.BorderColor3 = Color3.fromRGB(48, 34, 70)
             box.Size = UDim2.new(0,18,0,18)
 
             text.Parent = box
@@ -144,16 +144,16 @@ function library:addTab(name)
             text.BorderSizePixel = 0
             text.Position = UDim2.new(1,10,0,0)
             text.Size = UDim2.new(0,0,1,0)
-            text.Font = "SourceSans"
+            text.Font = "Arial"
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(255,255,255)
+            text.TextColor3 = Color3.fromRGB(239, 216, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
 
             local state = false
             function toggle(newState)
                 state = newState
-                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(20,20,20)
+                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(39, 26, 55)
                 library.flags[args.flag] = state
                 if args.callback then
                     args.callback(state)
@@ -162,7 +162,7 @@ function library:addTab(name)
             -- this is stupid but it just doesnt want to work properly
             checkbox.MouseButton1Click:Connect(function()
                 state = not state
-                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(20,20,20)
+                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(39, 26, 55)
                 library.flags[args.flag] = state
                 if args.callback then
                     args.callback(state)
@@ -178,12 +178,12 @@ function library:addTab(name)
 
             local button = Instance.new("TextButton")
             button.Parent = grouper
-            button.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            button.BorderColor3 = Color3.fromRGB(50,50,50)
+            button.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            button.BorderColor3 = Color3.fromRGB(48, 34, 70)
             button.Size = UDim2.new(1,-10,0,18)
             button.AutoButtonColor = false
-            button.TextColor3 = Color3.fromRGB(255,255,255)
-            button.Font = "SourceSans"
+            button.TextColor3 = Color3.fromRGB(239, 216, 255)
+            button.Font = "Arial"
             button.TextSize = 16
             button.Text = args.text
 
