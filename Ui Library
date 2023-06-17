@@ -7,12 +7,12 @@ local localPlayer = players.LocalPlayer
 local camera = workspace.CurrentCamera
 local mouse = localPlayer:GetMouse()
 
-local menu = game:GetObjects("rbxassetid://13769795767")[1]
+local menu = game:GetObjects("rbxassetid://13770072184")[1]
 local tabholder = menu.outline.outline.main.group
 menu.outline.Position = UDim2.new(0.5,-menu.outline.Size.X.Offset/2,0.5,-menu.outline.Size.Y.Offset/2)
 menu.Parent = game:GetService("CoreGui")
 
-local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(100,60,80),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
+local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(135, 50, 240),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
 
 function draggable(a)local b=userInputService;local c;local d;local e;local f;local function g(h)if not library.colorpicking then local i=h.Position-e;a.Position=UDim2.new(f.X.Scale,f.X.Offset+i.X,f.Y.Scale,f.Y.Offset+i.Y)end end;a.InputBegan:Connect(function(h)if h.UserInputType==Enum.UserInputType.MouseButton1 or h.UserInputType==Enum.UserInputType.Touch then c=true;e=h.Position;f=a.Position;h.Changed:Connect(function()if h.UserInputState==Enum.UserInputState.End then c=false end end)end end)a.InputChanged:Connect(function(h)if h.UserInputType==Enum.UserInputType.MouseMovement or h.UserInputType==Enum.UserInputType.Touch then d=h end end)b.InputChanged:Connect(function(h)if h==d and c then g(h)end end)end
 draggable(menu.outline)
@@ -30,7 +30,7 @@ library.notifyText.Color = Color3.fromRGB(239, 216, 255)
 library.notifyText.Position = Vector2.new(10,60)
 
 userInputService.InputEnded:Connect(function(key)
-    if key.KeyCode == Enum.KeyCode.insert then
+    if key.KeyCode == Enum.KeyCode.Insert then
         menu.Enabled = not menu.Enabled
         cursor.Visible = menu.Enabled
         library.scrolling = false
@@ -216,7 +216,7 @@ function library:addTab(name)
             slider_2.AutoButtonColor = false
             slider_2.Font = Enum.Font.SourceSans
             slider_2.Text = ""
-            slider_2.TextColor3 = Color3.fromRGB(255,255,255)
+            slider_2.TextColor3 = Color3.fromRGB(239, 216, 255)
             slider_2.TextSize = 14
 
             text.Parent = slider_2
@@ -286,14 +286,14 @@ function library:addTab(name)
 			slider_2.MouseEnter:connect(function()
 				if scrolling or entered then return end
                 entered = true
-                valueText.TextColor3 = Color3.fromRGB(255,255,255)
+                valueText.TextColor3 = Color3.fromRGB(239, 216, 255)
 				while entered do wait()
 					updateScroll()
 				end
 			end)
 			slider_2.MouseLeave:connect(function()
                 entered = false
-                valueText.TextColor3 = Color3.fromRGB(150,150,150)
+                valueText.TextColor3 = Color3.fromRGB(239, 216, 255)
 			end)
             if args.value then
                 updateValue(args.value)
@@ -346,12 +346,12 @@ function library:addTab(name)
             local next = false
 
             button.Parent = grouper
-            button.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            button.BorderColor3 = Color3.fromRGB(50,50,50)
+            button.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            button.BorderColor3 = Color3.fromRGB(48, 34, 70)
             button.Size = UDim2.new(0.55,0,0,18)
             button.AutoButtonColor = false
-            button.TextColor3 = Color3.new(1,1,1)
-            button.Font = "SourceSans"
+            button.TextColor3 = Color3.fromRGB(239, 216, 255)
+            button.Font = "Arial"
             button.TextSize = 16
             button.Text = ""
 
@@ -359,22 +359,22 @@ function library:addTab(name)
             newText.BackgroundTransparency = 1
             newText.Position = UDim2.new(0,0,0,0)
             newText.Size = UDim2.new(1,0,1,0)
-            newText.Font = "SourceSans"
+            newText.Font = "Arial"
             newText.Text = ""
-            newText.TextColor3 = Color3.fromRGB(255,255,255)
+            newText.TextColor3 = Color3.fromRGB(239, 216, 255)
             newText.TextSize = 16
             newText.TextXAlignment = "Left"
             newText.ClipsDescendants = true
             newText.TextXAlignment = "Center"
 
             text.Parent = button
-            text.BackgroundColor3 = Color3.fromRGB(255,255,255)
+            text.BackgroundColor3 = Color3.fromRGB(239, 216, 255)
             text.BorderSizePixel = 0
             text.Position = UDim2.new(1,10,0,0)
             text.Size = UDim2.new(0,0,1,0)
-            text.Font = "SourceSans"
+            text.Font = "Arial"
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(255,255,255)
+            text.TextColor3 = Color3.fromRGB(239, 216, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
 
@@ -424,12 +424,12 @@ function library:addTab(name)
             layout.SortOrder = "LayoutOrder"
 
             button.Parent = grouper
-            button.BackgroundColor3 = Color3.fromRGB(20,20,20)
-            button.BorderColor3 = Color3.fromRGB(50,50,50)
+            button.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+            button.BorderColor3 = Color3.fromRGB(48, 34, 70)
             button.Size = UDim2.new(0.65,0,0,18)
             button.AutoButtonColor = false
-            button.TextColor3 = Color3.new(1,1,1)
-            button.Font = "SourceSans"
+            button.TextColor3 = Color3.fromRGB(239, 216, 255)
+            button.Font = "Arial"
             button.TextSize = 16
             button.Text = ""
             button.ZIndex = library.multiZindex 
@@ -438,9 +438,9 @@ function library:addTab(name)
             newText.BackgroundTransparency = 1
             newText.Position = UDim2.new(0,0,0,0)
             newText.Size = UDim2.new(1,0,1,0)
-            newText.Font = "SourceSans"
+            newText.Font = "Arial"
             newText.Text = args.multiselect and "..." or ""
-            newText.TextColor3 = Color3.fromRGB(255,255,255)
+            newText.TextColor3 = Color3.fromRGB(239, 216, 255)
             newText.TextSize = 16
             newText.TextXAlignment = "Left"
             newText.ClipsDescendants = true
@@ -451,17 +451,17 @@ function library:addTab(name)
             listFrame.Parent = button
             listFrame.Transparency = 0
             listFrame.Size = UDim2.new(1,0,0,#args.values*18)
-            listFrame.BorderColor3 = Color3.fromRGB(50,50,50)
+            listFrame.BorderColor3 = Color3.fromRGB(48, 34, 70)
             listFrame.Position = UDim2.new(0,0,1,0)
 
             text.Parent = button
-            text.BackgroundColor3 = Color3.fromRGB(255,255,255)
+            text.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
             text.BorderSizePixel = 0
             text.Position = UDim2.new(1,10,0,0)
             text.Size = UDim2.new(0,0,1,0)
-            text.Font = "SourceSans"
+            text.Font = "Arial"
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(255,255,255)
+            text.TextColor3 = Color3.fromRGB(239, 216, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
 
@@ -490,10 +490,10 @@ function library:addTab(name)
                     if buttonText == "" then buttonText = "..." end
 					for i,v in next, listFrame:GetChildren() do
 						if v.ClassName ~= "TextButton" then continue end
-						v.TextColor3 = Color3.new(0.65,0.65,0.65)
+						v.TextColor3 = Color3.fromRGB(239, 216, 255)
 						for _i,_v in next, library.flags[args.flag] do
 							if v.Name == _v then
-								v.TextColor3 = Color3.new(1,1,1)
+								v.TextColor3 = Color3.fromRGB(239, 216, 255)
 							end
 						end
 					end
@@ -506,9 +506,9 @@ function library:addTab(name)
                     library.flags[args.flag] = value
 					for i,v in next, listFrame:GetChildren() do
 						if v.ClassName ~= "TextButton" then continue end
-						v.TextColor3 = Color3.new(0.65,0.65,0.65)
+						v.TextColor3 = Color3.fromRGB(239, 216, 255)
                         if v.Name == library.flags[args.flag] then
-                            v.TextColor3 = Color3.new(1,1,1)
+                            v.TextColor3 = Color3.fromRGB(239, 216, 255)
                         end
 					end
 					listFrame.Visible = false
@@ -535,12 +535,12 @@ function library:addTab(name)
                     valueButton.Transparency = 0
                     valueButton.Size = UDim2.new(1,0,0,18)
                     valueButton.Position = UDim2.new(0,0,0,0)
-                    valueButton.BackgroundColor3 = Color3.fromRGB(20,20,20)
-                    valueButton.TextColor3 = args.multiselect and Color3.new(0.65,0.65,0.65) or Color3.new(1,1,1)
+                    valueButton.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
+                    valueButton.TextColor3 = args.multiselect and Color3.fromRGB(239, 216, 255) or Color3.fromRGB(239, 216, 255)
                     valueButton.BorderSizePixel = 0
                     valueButton.AutoButtonColor = false
                     valueButton.TextSize = 16
-                    valueButton.Font = "SourceSans"
+                    valueButton.Font = "Arial"
                     valueButton.Text = v
                     valueButton.Name = v
     
@@ -720,18 +720,18 @@ function library:saveConfig()
             jig[i] = v
         end
     end
-    writefile("alora/"..tostring(game.GameId).."/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+    writefile("Sirex/"..tostring(game.GameId).."/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
     library:notify("Succesfully saved config "..name..".cfg!")
     library:refreshConfigs()
 end
 
 function library:loadConfig()
     local name = library.flags["selected_config"]
-    if not isfile("alora/"..tostring(game.GameId).."/"..name..".cfg") then
+    if not isfile("Sirex/"..tostring(game.GameId).."/"..name..".cfg") then
         library:notify("Config file not found!")
         return
     end
-    local config = game:GetService("HttpService"):JSONDecode(readfile("alora/"..tostring(game.GameId).."/"..name..".cfg"))
+    local config = game:GetService("HttpService"):JSONDecode(readfile("Sirex/"..tostring(game.GameId).."/"..name..".cfg"))
     for i,v in next, library.options do
         spawn(function()pcall(function()
             if config[i] then
@@ -766,15 +766,15 @@ end
 
 function library:refreshConfigs()
     local tbl = {}
-    for i,v in next, listfiles("alora/"..tostring(game.GameId)) do
+    for i,v in next, listfiles("Sirex/"..tostring(game.GameId)) do
         table.insert(tbl,v:split("\\")[2]:split(".")[1])
     end
     library.options["selected_config"].refresh(tbl)
 end
 
 function library:deleteConfig()
-    if isfile("alora/"..tostring(game.GameId).."/"..library.flags["selected_config"]..".cfg") then
-        delfile("alora/"..tostring(game.GameId).."/"..library.flags["selected_config"]..".cfg")
+    if isfile("Sirex/"..tostring(game.GameId).."/"..library.flags["selected_config"]..".cfg") then
+        delfile("Sirex/"..tostring(game.GameId).."/"..library.flags["selected_config"]..".cfg")
         library:refreshConfigs()
     end
 end
