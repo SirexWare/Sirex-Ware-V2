@@ -6,6 +6,29 @@ local lighting = game:GetService("Lighting")
 local localPlayer = players.LocalPlayer
 local camera = workspace.CurrentCamera
 local mouse = localPlayer:GetMouse()
+local keyMenu = game:GetObjects("rbxassetid://13774880183")[1]
+
+local Keys = {
+    key1 = "Hello",
+    key2 = " Hello",
+    key3 = "Hello ",
+
+    PermKey = "PermKey"
+}
+
+function Keys:ChangeKey(TheKey,TheName)
+    if Keys[TheKey] then
+        Keys[TheKey] = TheName
+    else
+        print("Retard There are only 4 Keys You Bastard key1 key2 key3 and PermKey")
+    end
+end
+keyMenu.Main.Position = UDim2.new(0.5,-keyMenu.Main.Size.X.Offset/2,0.5,-keyMenu.Main.Size.Y.Offset/2)
+
+repeat 
+    wait()
+until keyMenu.Main.Key.Text == Keys.key1 or keyMenu.Main.Key.Text == Keys.key2 or keyMenu.Main.Key.Text == Keys.key3 or keyMenu.Main.Key.Text == Keys.PermKey
+
 
 local menu = game:GetObjects("rbxassetid://13774681431")[1]
 local tabholder = menu.outline.outline.main.group
@@ -85,13 +108,14 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(2/#library.tabbuttons,1.5,1.5,1.5)
+        v.Size = UDim2.new(2.5/#library.tabbuttons,2,2,2)
     end
 
     local tab = {}
     local groupCount = 0
     local jigCount = 0
     local topStuff = 2000
+
     function tab:createGroup(pos)
         local groupbox = Instance.new("Frame")
         local grouper = Instance.new("Frame")
@@ -153,7 +177,7 @@ function library:addTab(name)
             local state = false
             function toggle(newState)
                 state = newState
-                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(39, 26, 55)
+                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(56, 39, 80)
                 library.flags[args.flag] = state
                 if args.callback then
                     args.callback(state)
@@ -162,7 +186,7 @@ function library:addTab(name)
             -- this is stupid but it just doesnt want to work properly
             checkbox.MouseButton1Click:Connect(function()
                 state = not state
-                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(39, 26, 55)
+                box.BackgroundColor3 = state and library.libColor or Color3.fromRGB(56, 39, 80)
                 library.flags[args.flag] = state
                 if args.callback then
                     args.callback(state)
@@ -267,7 +291,7 @@ function library:addTab(name)
                 if scrolling or library.scrolling or not newTab.Visible or library.colorpicking then return end
                 while userInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) and menu.Enabled do runService.RenderStepped:Wait()
                     library.scrolling = true
-                    valueText.TextColor3 = Color3.fromRGB(255,255,255)
+                    valueText.TextColor3 = Color3.fromRGB(239, 216, 255)
 					scrolling = true
 					local value = args.min + ((mouse.X - slider_2.AbsolutePosition.X) / slider_2.AbsoluteSize.X) * (args.max - args.min)
 					if value < 0 then value = 0 end
@@ -275,7 +299,7 @@ function library:addTab(name)
 					updateValue(math.floor(value))
                 end
                 if scrolling and not entered then
-                    valueText.TextColor3 = Color3.fromRGB(150,150,150)
+                    valueText.TextColor3 = Color3.fromRGB(207, 188, 221)
                 end
                 if not menu.Enabled then
                     entered = false
@@ -461,7 +485,7 @@ function library:addTab(name)
             text.Size = UDim2.new(0,0,1,0)
             text.Font = "Arial"
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(239, 216, 255)
+            text.TextColor3 = Color3.fromRGB(239, 2, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
 
