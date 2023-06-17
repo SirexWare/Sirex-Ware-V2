@@ -23,6 +23,9 @@ function Keys:ChangeKey(TheKey,TheName)
         print("Retard There are only 4 Keys You Bastard key1 key2 key3 and PermKey")
     end
 end
+
+keyMenu.Parent = game:GetService("CoreGui")
+keyMenu.Enabled = true
 keyMenu.Main.Position = UDim2.new(0.5,-keyMenu.Main.Size.X.Offset/2,0.5,-keyMenu.Main.Size.Y.Offset/2)
 
 repeat 
