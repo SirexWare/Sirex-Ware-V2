@@ -85,7 +85,7 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.3/#library.tabbuttons,1,1,1)
+        v.Size = UDim2.new(0.2/#library.tabbuttons,1.3,1.3,1.3)
         -- v.Size = UDim2.new(2.5/#library.tabbuttons,2,2,2)
     end
 
