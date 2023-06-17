@@ -7,7 +7,7 @@ local localPlayer = players.LocalPlayer
 local camera = workspace.CurrentCamera
 local mouse = localPlayer:GetMouse()
 
-local menu = game:GetObjects("rbxassetid://13774578918")[1]
+local menu = game:GetObjects("rbxassetid://13774681431")[1]
 local tabholder = menu.outline.outline.main.group
 menu.outline.Position = UDim2.new(0.5,-menu.outline.Size.X.Offset/2,0.5,-menu.outline.Size.Y.Offset/2)
 menu.Parent = game:GetService("CoreGui")
@@ -85,7 +85,7 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(1/#library.tabbuttons,1,1,1)
+        v.Size = UDim2.new(1/#library.tabbuttons,3.5,3.5,3.5)
     end
 
     local tab = {}
