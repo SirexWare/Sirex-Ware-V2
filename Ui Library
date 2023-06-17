@@ -11,29 +11,21 @@ local keyMenu = game:GetObjects("rbxassetid://13774880183")[1]
 local Keys = {
     key1 = "wowsirexwarev3",
     key2 = "wowsirexwarev3 ",
-    key3 = " wowsirexwarev3 ",
+    key3 = " wowsirexwarev3",
 
-    PermKey = "PermKey"
+    PermKey = "YarHackFackingStanks"
 }
-
-function library:ChangeKey(TheKey,TheName)
-    if Keys[TheKey] then
-        Keys[TheKey] = TheName
-    else
-        print("Retard There are only 4 Keys You Bastard key1 key2 key3 and PermKey")
-    end
-end
 
 keyMenu.Parent = game:GetService("CoreGui")
 keyMenu.Enabled = true
 keyMenu.Main.Position = UDim2.new(0.5,-keyMenu.Main.Size.X.Offset/2,0.5,-keyMenu.Main.Size.Y.Offset/2)
 
-local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(135, 50, 240),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
-
 repeat 
     wait()
 until keyMenu.Main.Key.Text == Keys.key1 or keyMenu.Main.Key.Text == Keys.key2 or keyMenu.Main.Key.Text == Keys.key3 or keyMenu.Main.Key.Text == Keys.PermKey
 keyMenu:Destroy()
+
+local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(135, 50, 240),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
 
 local menu = game:GetObjects("rbxassetid://13774681431")[1]
 local tabholder = menu.outline.outline.main.group
