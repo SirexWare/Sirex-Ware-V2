@@ -85,7 +85,7 @@ function library:addTab(name)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.6/#library.tabbuttons,1.4,1.4,1.4)
+        v.Size = UDim2.new(0.35/#library.tabbuttons,1.3,1.3,1.3)
         -- v.Size = UDim2.new(2.5/#library.tabbuttons,2,2,2)
     end
 
@@ -102,7 +102,7 @@ function library:addTab(name)
         groupbox.Parent = newTab[pos == 0 and "left" or "right"]
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
-        groupbox.Size = UDim2.new(1,-5,0,10)
+        groupbox.Size = UDim2.new(1,-4,0,10)
         groupbox.ZIndex = groupCount
         groupbox.Parent.UIListLayout.Padding = UDim.new(0,5)
 
