@@ -91,7 +91,7 @@ function library:addTab(name,Imageid)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.85/#library.tabbuttons,1.35,1.35,1.35)
+        v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
         -- v.Size = UDim2.new(2.5/#library.tabbuttons,2,2,2)
     end
 
@@ -105,10 +105,16 @@ function library:addTab(name,Imageid)
         local grouper = Instance.new("Frame")
         local layout = Instance.new("UIListLayout")
         groupCount -= 1
-        groupbox.Parent = newTab[pos == 0 and "left" or "right" or "center"]
+        if pos == 0 or pos == "left" then
+            groupbox.Parent = newTab["left"]
+        elseif pos == 1 or pos == "right" then
+            groupbox.Parent = newTab["right"]
+        elseif pos == 2 or pos == "center" then
+            groupbox.Parent = newTab["center"]
+        end
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
-        groupbox.Size = UDim2.new(1,-5,0,30)
+        groupbox.Size = UDim2.new(1,-5,0,22.5)
         groupbox.ZIndex = groupCount
         groupbox.Parent.UIListLayout.Padding = UDim.new(0,5)
 
