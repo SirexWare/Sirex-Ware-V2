@@ -106,11 +106,11 @@ function library:addTab(name,Imageid)
         local layout = Instance.new("UIListLayout")
         groupCount -= 1
         if pos == 0 or pos == "left" then
-            groupbox.Parent = newTab["left"]
+            groupbox.Parent = newTab[pos == 0 and "left"]
         elseif pos == 1 or pos == "right" then
-            groupbox.Parent = newTab["right"]
+            groupbox.Parent = newTab[pos == 1 and "right"]
         elseif pos == 2 or pos == "center" then
-            groupbox.Parent = newTab["center"]
+            groupbox.Parent = newTab[pos == 2 and "center"]
         else
             print(pos)
         end
