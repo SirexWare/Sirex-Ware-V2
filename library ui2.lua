@@ -111,6 +111,8 @@ function library:addTab(name,Imageid)
             groupbox.Parent = newTab["right"]
         elseif pos == 2 or pos == "center" then
             groupbox.Parent = newTab["center"]
+        else
+            print(pos)
         end
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
