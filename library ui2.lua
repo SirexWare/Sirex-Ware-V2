@@ -9,7 +9,7 @@ local mouse = localPlayer:GetMouse()
 
 local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(135, 50, 240),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
 
-local menu = game:GetObjects("rbxassetid://13862064129")[1]
+local menu = game:GetObjects("rbxassetid://13862860703")[1]
 local tabholder = menu.outline.outline.main.group
 menu.outline.Position = UDim2.new(0.5,-menu.outline.Size.X.Offset/2,0.5,-menu.outline.Size.Y.Offset/2)
 menu.Parent = game:GetService("CoreGui")
@@ -91,8 +91,8 @@ function library:addTab(name,Imageid)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
-        -- v.Size = UDim2.new(2.5/#library.tabbuttons,2,2,2)
+        v.Size = UDim2.new(0.191, 0,1.333, 18)
+        -- v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
     end
 
     local tab = {}
@@ -134,7 +134,7 @@ function library:addTab(name,Imageid)
         function group:addToggle(args)
             if not args.flag and args.text then args.flag = args.text end
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,23)
+            groupbox.Size += UDim2.new(0,0,0,30)
 
             local checkbox = Instance.new("TextButton")
             local box = Instance.new("Frame")
