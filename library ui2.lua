@@ -105,7 +105,7 @@ function library:addTab(name,Imageid)
         local grouper = Instance.new("Frame")
         local layout = Instance.new("UIListLayout")
         groupCount -= 1
-        groupbox.Parent = newTab[pos == 0 and "left" or "right" or "cemter"]
+        groupbox.Parent = newTab[pos == 0 and "left" or "right" or "center"]
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
         groupbox.Size = UDim2.new(1,-5,0,30)
