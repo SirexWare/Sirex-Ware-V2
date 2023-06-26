@@ -139,7 +139,7 @@ function library:addTab(name,Imageid)
         function group:addToggle(args)
             if not args.flag and args.text then args.flag = args.text end
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,27.5)
+            groupbox.Size += UDim2.new(0,0,0,24)
 
             local checkbox = Instance.new("TextButton")
             local box = Instance.new("Frame")
@@ -195,7 +195,7 @@ function library:addTab(name,Imageid)
         end
         function group:addButton(args)
             if not args.callback or not args.text then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,27.5)
+            groupbox.Size += UDim2.new(0,0,0,24)
 
             local button = Instance.new("TextButton")
             button.Parent = grouper
@@ -216,7 +216,7 @@ function library:addTab(name,Imageid)
         end
         function group:addSlider(args)
             if not args.flag or not args.max then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,45)
+            groupbox.Size += UDim2.new(0,0,0,42.5)
 
             local slider = Instance.new("Frame")
             local slider_2 = Instance.new("TextButton")
@@ -336,7 +336,7 @@ function library:addTab(name,Imageid)
         function group:addTextbox(args)
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
             local textbox = Instance.new("TextBox")
-            groupbox.Size += UDim2.new(0,0,0,27.5)
+            groupbox.Size += UDim2.new(0,0,0,24)
 
             textbox:GetPropertyChangedSignal('Text'):Connect(function(val)
                 library.flags[args.flag] = textbox.Text
@@ -359,7 +359,7 @@ function library:addTab(name,Imageid)
         end
         function group:addKeybind(args)
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,27.5)
+            groupbox.Size += UDim2.new(0,0,0,24)
 
             local button = Instance.new("TextButton")
             local text = Instance.new("TextLabel")
@@ -431,7 +431,7 @@ function library:addTab(name,Imageid)
         end
         function group:addList(args)
             if not args.flag or not args.values then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,27.5)
+            groupbox.Size += UDim2.new(0,0,0,24)
 
             library.multiZindex -= 1
             local button = Instance.new("TextButton")
@@ -588,7 +588,7 @@ function library:addTab(name,Imageid)
         end
         function group:addColorpicker(args)
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,20)
+            groupbox.Size += UDim2.new(0,0,0,21)
 
             library.multiZindex -= 1
             jigCount -= 1
@@ -623,24 +623,24 @@ function library:addTab(name,Imageid)
 
             button.Parent = grouper
             button.BackgroundColor3 = args.color or Color3.new(1,1,1)
-            button.BorderColor3 = Color3.fromRGB(50,50,50)
+            button.BorderColor3 = Color3.fromRGB(48, 34, 70)
             button.Size = UDim2.new(0,35,0,15)
             button.AutoButtonColor = false
             button.ZIndex = args.ontop and topStuff or jigCount
-            button.TextColor3 = Color3.fromRGB(255,255,255)
-            button.Font = "SourceSans"
+            button.TextColor3 = Color3.fromRGB(239, 216, 255)
+            button.Font = "Arial"
             button.TextSize = 16
             button.Text = ""
             button.Name = "dontchange"
 
             text.Parent = button
-            text.BackgroundColor3 = Color3.fromRGB(255,255,255)
+            text.BackgroundColor3 = Color3.fromRGB(56, 39, 80)
             text.BorderSizePixel = 0
             text.Position = UDim2.new(1,10,0,0)
             text.Size = UDim2.new(0,0,1,0)
-            text.Font = "SourceSans"
+            text.Font = "Arial"
             text.Text = args.text or args.flag
-            text.TextColor3 = Color3.fromRGB(255,255,255)
+            text.TextColor3 = Color3.fromRGB(239, 216, 255)
             text.TextSize = 16
             text.TextXAlignment = "Left"
 
