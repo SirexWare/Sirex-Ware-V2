@@ -96,7 +96,7 @@ function library:addTab(name,Imageid)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(1/#library.tabbuttons,1.5,1.5,1.5)
+        v.Size = UDim2.new(0.158, 0,1.222, 18)
         -- v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
     end
 
@@ -121,7 +121,7 @@ function library:addTab(name,Imageid)
         end
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
-        groupbox.Size = UDim2.new(1,-5,0,22.5)
+        groupbox.Size = UDim2.new(1,-5,0,20)
         groupbox.ZIndex = groupCount
         groupbox.Parent.UIListLayout.Padding = UDim.new(0,5)
 
@@ -139,7 +139,7 @@ function library:addTab(name,Imageid)
         function group:addToggle(args)
             if not args.flag and args.text then args.flag = args.text end
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,30)
+            groupbox.Size += UDim2.new(0,0,0,27.5)
 
             local checkbox = Instance.new("TextButton")
             local box = Instance.new("Frame")
@@ -195,7 +195,7 @@ function library:addTab(name,Imageid)
         end
         function group:addButton(args)
             if not args.callback or not args.text then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,23)
+            groupbox.Size += UDim2.new(0,0,0,27.5)
 
             local button = Instance.new("TextButton")
             button.Parent = grouper
@@ -216,7 +216,7 @@ function library:addTab(name,Imageid)
         end
         function group:addSlider(args)
             if not args.flag or not args.max then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,41)
+            groupbox.Size += UDim2.new(0,0,0,45)
 
             local slider = Instance.new("Frame")
             local slider_2 = Instance.new("TextButton")
@@ -324,7 +324,7 @@ function library:addTab(name,Imageid)
             updateValue(args.value or 0)
         end
         function group:addDivider()
-            groupbox.Size += UDim2.new(0,0,0,3)
+            groupbox.Size += UDim2.new(0,0,0,3.25)
             local divider = Instance.new("Frame")
 
             divider.Parent = grouper
@@ -336,7 +336,7 @@ function library:addTab(name,Imageid)
         function group:addTextbox(args)
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
             local textbox = Instance.new("TextBox")
-            groupbox.Size += UDim2.new(0,0,0,23)
+            groupbox.Size += UDim2.new(0,0,0,27.5)
 
             textbox:GetPropertyChangedSignal('Text'):Connect(function(val)
                 library.flags[args.flag] = textbox.Text
@@ -359,7 +359,7 @@ function library:addTab(name,Imageid)
         end
         function group:addKeybind(args)
             if not args.flag then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,23)
+            groupbox.Size += UDim2.new(0,0,0,27.5)
 
             local button = Instance.new("TextButton")
             local text = Instance.new("TextLabel")
@@ -431,7 +431,7 @@ function library:addTab(name,Imageid)
         end
         function group:addList(args)
             if not args.flag or not args.values then return warn("⚠️ incorrect arguments ⚠️") end
-            groupbox.Size += UDim2.new(0,0,0,23)
+            groupbox.Size += UDim2.new(0,0,0,27.5)
 
             library.multiZindex -= 1
             local button = Instance.new("TextButton")
