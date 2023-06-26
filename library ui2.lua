@@ -9,7 +9,7 @@ local mouse = localPlayer:GetMouse()
 
 local library = {name = "Counter Blox",colorpicking = false,tabbuttons = {},tabs = {},options = {},flags = {},scrolling = false,notifyText = Drawing.new("Text"),playing = false,multiZindex = 100,toInvis = {},libColor = Color3.fromRGB(135, 50, 240),blacklisted = {Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.UserInputType.MouseMovement}}
 
-local menu = game:GetObjects("rbxassetid://13862860703")[1]
+local menu = game:GetObjects("rbxassetid://13867773576")[1]
 local tabholder = menu.outline.outline.main.group
 menu.outline.Position = UDim2.new(0.5,-menu.outline.Size.X.Offset/2,0.5,-menu.outline.Size.Y.Offset/2)
 menu.Parent = game:GetService("CoreGui")
@@ -74,10 +74,16 @@ function library:addTab(name,Imageid)
     newButton.Modal = true
     newButton.Visible = true
     newButton.Text = name
+    newButton.TextLabel.Text = name
+    newButton.TextLabel.Visible = false
+
 
     if Imageid ~= nil then
         newButton.ImageLabel.Image = "rbxassetid://"..Imageid
+        newButton.Text = ""
+        newButton.TextLabel.Visible = true
     else
+        newButton.TextLabel:Destroy()
         newButton.ImageLabel:Destroy()
     end
 
@@ -91,7 +97,7 @@ function library:addTab(name,Imageid)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.191, 0,1.333, 18)
+        v.Size = UDim2.new(0.75/#library.tabbuttons,1,1,1)
         -- v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
     end
 
