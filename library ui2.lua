@@ -77,7 +77,6 @@ function library:addTab(name,Imageid)
     newButton.TextLabel.Text = name
     newButton.TextLabel.Visible = false
 
-
     if Imageid ~= nil then
         newButton.ImageLabel.Image = "rbxassetid://"..Imageid
         newButton.Text = ""
@@ -97,7 +96,7 @@ function library:addTab(name,Imageid)
     end)
 
     for i,v in next, library.tabbuttons do
-        v.Size = UDim2.new(0.75/#library.tabbuttons,1,1,1)
+        v.Size = UDim2.new(1/#library.tabbuttons,1.5,1.5,1.5)
         -- v.Size = UDim2.new(0.75/#library.tabbuttons,1.3,1.3,1.3)
     end
 
