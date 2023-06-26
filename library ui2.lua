@@ -121,7 +121,7 @@ function library:addTab(name,Imageid)
         end
         groupbox.BackgroundColor3 = Color3.fromRGB(39, 27, 55)
         groupbox.BorderSizePixel = 0
-        groupbox.Size = UDim2.new(1,-5,0,20)
+        groupbox.Size = UDim2.new(1,-5,0,15)
         groupbox.ZIndex = groupCount
         groupbox.Parent.UIListLayout.Padding = UDim.new(0,5)
 
